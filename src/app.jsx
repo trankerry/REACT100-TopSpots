@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import TopSpot from './topspot'
 
 export default class App extends Component {
   constructor(props) {
