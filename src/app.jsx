@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import TopSpot from './topspot'
+import TopSpot from './topspot';
 
 export default class App extends Component {
   constructor(props) {
@@ -33,7 +33,15 @@ export default class App extends Component {
           <h1>San Diego Top Spots</h1>
           <p>A list of the top 30 places to see in San Diego, California</p>
         </div>
-        <pre>{ JSON.stringify(this.state.topspots, null, 2) }</pre>
+
+        {this.state.topspots.map(topspot => (
+          <TopSpot
+            key={ topspot.id }
+            name={ topspot.name }
+            description={ topspot.description }
+            location={ topspot.location }
+          />
+    ))}
       </div>
     );
   }
